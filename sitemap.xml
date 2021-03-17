@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://svenschnieders.github.io/website/posts/</loc>
-    <lastmod>2021-03-17T14:54:01+01:00</lastmod>
+    <loc>https://svenschnieders.github.io/website/blog/</loc>
+    <lastmod>2021-03-17T16:46:46+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://svenschnieders.github.io/website/</loc>
+    <lastmod>2021-03-17T16:46:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/test-post/</loc>
+    <lastmod>2021-03-17T16:46:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/posts/</loc>
     <lastmod>2021-03-17T14:54:01+01:00</lastmod>
   </url>
   
