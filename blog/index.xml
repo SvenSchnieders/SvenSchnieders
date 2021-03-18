@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Sven Schnieders.</copyright>
-    <lastBuildDate>Wed, 17 Mar 2021 16:46:46 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 18 Mar 2021 14:25:40 +0100</lastBuildDate>
     
 	<atom:link href="https://svenschnieders.github.io/website/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>No Rules For Reading Books</title>
+      <link>https://svenschnieders.github.io/website/rules/</link>
+      <pubDate>Thu, 18 Mar 2021 14:25:40 +0100</pubDate>
+      
+      <guid>https://svenschnieders.github.io/website/rules/</guid>
+      <description>A lot has been written about this topic, but I think most of those giving advice are missing the fact that there is no “right” way to read books. Instead of giving advice on what to do—via positiva—we will explore what not to do—via negativa. Advice on what not to do (or what to avoid) is not only more robust—it changes less over time—it is, in my opinion, the only advice worth giving when it comes to reading.</description>
+    </item>
     
     <item>
       <title>Test Post</title>
@@ -23,7 +32,7 @@ The only information most people consume is the news and other news-like content
     </item>
     
     <item>
-      <title>Intellctual Curiosity</title>
+      <title>The Death of Intellectual Curiosity</title>
       <link>https://svenschnieders.github.io/website/curiosity/</link>
       <pubDate>Sat, 11 Jan 2020 12:55:49 +0100</pubDate>
       
