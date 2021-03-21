@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>An Introduction to Ergodicity | Sven Schnieders</title>
+
+  
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #222426;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 2px solid rgb(54, 54, 54);
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #282c35;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/website/" class="title">
+  <h2>Sven Schnieders</h2>
+</a>
+<nav><a href="/website/">Home</a>
+
+
+<a href="/website/blog">Blog</a>
+
+
+<a href="/website/books">Books</a>
+</nav>
+</header>
+  <main>
+
+<h1>An Introduction to Ergodicity</h1>
+<p>
+  <i>
+    <time datetime='2020-04-20' pubdate>
+      20 Apr, 2020
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>The concept of ergodicity is something people get intuitively but unlearn by visiting a statistics class or completing an MBA. The distinction between ergodic and non-ergodic systems is nonetheless essential for understanding how humans act and why some “irrational” behavior or heuristic might be rational after all. It is a concept mostly used in mathematical probability theory but originated in thermodynamics.</p>
+<p>An ergodic system is technically defined as a system that has the same behavior averaged over time as it has averaged over the space of all the system’s states. This might sound complicated at first, but the difference between ergodic and non-ergodic systems can be illustrated in two examples—rolling dice and Russian roulette.</p>
+<h3 id="rolling-dice">Rolling Dice</h3>
+<p>If we have one person rolling a dice 100 times, he will, on average, roll a six 1/6 x 100 = 16.6666 times. This is what most people learned in school, and it is completely correct. Now, the important part is that it does not matter if we have one person rolling a dice 100 times or 100 people rolling dice once. The average amount of sixes does not change. For this reason, rolling dice is considered an ergodic system; the average over time—on person rolling a dice 100 times—is equal to the average over the space of all the system’s states—100 people rolling the dice once. It might sound obvious, but it is an important distinction, as we will see with Russian roulette.</p>
+<h3 id="russian-roulette">Russian Roulette</h3>
+<p>We are going to assume that the probability of dying is the same as it is for rolling a six (1/6). Let us first imagine 100 people playing this game. Out of these 100 people, 1/6 x 100 = 16.6666 people are going to die on average; this is the average over the space of all the system’s states. Now we will consider one person playing Russian roulette 100 times. The difference is huge. The average we have calculated—the average over the system&rsquo;s states—is meaningless in this scenario. The big mistake people—especially in finance—make, is to think that this average is useful.</p>
+<p>One could naively think that the average means that if we let 100 people play roulette 100 times, on average 16 would die—this is false. The probability for one person dying by playing 100 rounds of Russian roulette is not 1/6 but 1-(5/6)^100 = 0.9999999879.  In other words, playing 100 rounds of Russian roulette means certain death. And if 100 people play each 100 rounds, we end up with 100 dead people, not 16.6. This is the huge difference between ergodic and non-ergodic systems.</p>
+<p>One can also think of a non-ergodic system as a random walk with an absorption barrier—a border that, when passed, does not let the system come back. In our Russian roulette example, the barrier is death. Someone dead cannot continue playing and be, after playing another 80 “successful” rounds, almost alive again. This is not how death, or an absorption barrier, works. If the reader has fully understood ergodic systems, one thing should be obvious: almost all systems in real life are non-ergodic. (Yes, there are some “tricks” finance people use to make systems ergodic, but as it turns out, they don’t work.)</p>
+<h3 id="gamblers-ruin">Gamblers Ruin</h3>
+<p>A more practical example is the so-called <a href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gamblers ruin</a>. Let us imagine a gambler in a “fair” game of flipping coins. He starts with 3€ and has to pay 1€ to play the game. If the coin lands on heads, he gets back 2€ (his initial stake + 1€). If the coin lands on tails, he loses his 1€. This means he has a 50% chance of winning 1€ and a 50% chance of losing 1€—a so-called “fair” game. On could calculate the average (1/2<em>1+1/2</em>(-1)=0) and would see that the player does neither win nor lose money. He can play 500 rounds and, on average, come out even—or at least that is the claim. However, as we have already seen, this average is only the average of the system’s states, which is only meaningful if we have an ergodic system.</p>
+<p>So is this game ergodic? No. (As I have mentioned above, almost no system is ergodic, and if you can’t figure it out, <em>always</em> default to non-ergodic.) This means that we have (again) calculated a completely misleading average because there is an absorption barrier at 0€. The gambler cannot (at least in our example) play without having 1€. Once he has reached 0€, he cannot continue playing. It is like being dead in our Russian roulette example—a point of no return. So what is the expected outcome of playing the “fair” coin game 500 times? Bankruptcy. You just need to lose a couple of times in a row and hit 0 once, and you are done.</p>
+<p>(Edit: note that although every individual player is extremely likely to go bankrupt playing this game, there is a small chance of winning a lot of money so that the average bankroll of all players remains 3€. However, this average is very misleading.)</p>
+<p>It is a lilt more difficult to calculate the exact probability because in Russian roulette we had to lose only once, but here we have to lose 3 times (we started with 3€) + the amount of money we have already won, to reach 0. For anyone interested in the math, this is a great <a href="http://www2.math.uu.se/~sea/kurser/stokprocmn1/slumpvandring_eng.pdf">paper</a> (especially the part “The monkey at the cliff”).</p>
+<p>More important than knowing the exact probabilities is to understand that if you play this “fair” game often enough, you will eventually go bust. Keep in mind that depending on the system, it is extremely difficult (i.e. in practice impossible) to calculate the average over time, which is why everyone is trying to use the “normal” average.</p>
+<p>An interesting and funny technical note: since the concept can we be viewed as a classical random walk in one dimension, you always hit the absorption barrier if you walk long enough. But as I have pointed out in my essay <a href="https://svenschnieders.com/essays/the-weirdness-of-quantum-random-walks">The Weirdness of Quantum Random Walks</a>, this is not the case for the quantum walk. (The interested reader can read a great technical paper about it <a href="https://arxiv.org/pdf/quant-ph/0303081.pdf">here</a>.) So if it were a quantum random walk, we would have a <em>nonzero</em> chance of walking out of the casino with an infinite amount of money instead of always going bankrupt.</p>
+<h3 id="finance">Finance</h3>
+<p>Ergodicity is a huge problem in portfolio theories (e.g., <a href="https://en.wikipedia.org/wiki/Modern_portfolio_theory">Modern portfolio theory</a>) because they’re so complicated that essential things are often forgotten. You need to be extremely intelligent to be that stupid. I will not go into detail here of how every specific model is flawed because it is boring, and more importantly, not my expertise. It is, however, important to note that for ergodic systems, time does not matter. You compute the average, and that is it; you do not care how the system gets to all of the states. The real world—and markets—don’t work this way. Time and especially the direction of time matters a lot—you want to win the lottery and die 50 years later, not the other way around.</p>
+<p>This feature of our real world has to do with causality and cannot be taken away by some market theory—although people have tried. A great example of this is the <a href="https://en.wikipedia.org/wiki/Sharpe_ratio">Sharpe Ratio</a>. As explained in this great <a href="https://medium.com/@allenfarrington/cargo-cult-math-d0be13fd902e">essay</a> (based on the work of Alex Adamou and Ole Peters), the ratio is not dimensionless even though so many finance people think it is, and that is a big problem.</p>
+<p>I will try to briefly explain what this means with an analogy. The maximum velocity your car can drive has a unit; it is measured in Kilometers per hour (km/h), or Miles per hour. This is what we call a dimensionful variable. What those smart finance people now do (again you have to be very smart to be this stupid), is to pretend the variable is dimensionless and change the underlying unit to make it seem like the car is going faster. They calculate the new velocity in meters per hour and see a bigger number (220km/h = 220000m/h). They pretend that the velocity does not have a dimension and just think “ Oh 220000 is bigger than 220; I now have a super-fast car.”  This is what happens when pretending a dimensionful variable is dimensionless.</p>
+<p>In summary, the Sharpe Ratio is bullshit. Also, every time you read “expected value”, you should be extremely cautious because it is probably bullshit as well. (“Bullshit” should not be considered profane language in this context, but rather the use of a word, rigorously defined by the philosopher <a href="https://en.wikipedia.org/wiki/Harry_Frankfurt">Harry Frankfurt</a> in his 1986 essay <a href="http://www2.csudh.edu/ccauthen/576f12/frankfurt__harry_-_on_bullshit.pdf">On Bullshit</a>—yes, I am not kidding, but I digress.)</p>
+<p>The most important thing to understand is that if you play a game with a small chance of going bankrupt long enough, you will go bankrupt. Do not tell this your finance professor, or better do and see what happens. (Please ignore everything he says after “Yes, I know”—he might think he does, but he does not—and wait for the next time he talks about expectation values or worse, “risk-free returns” to run as far away as you can.)</p>
+<h3 id="human-behavior">Human Behavior</h3>
+<p>Another field where understanding ergodicity is critical is <a href="https://en.wikipedia.org/wiki/Behavioral_economics">behavioral economics</a>. This field mainly studies the choices of individuals and tries to find regularities and <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases">cognitive biases</a>. The problem is that some behavior (e.g., <a href="https://en.wikipedia.org/wiki/Loss_aversion">loss aversion</a>) is often considered “irrational.” Loss aversion means that people avoid a loss of a specific size more than they want the equivalent gain. Most people would not take the following bet: a fair coin is thrown, and you win 120€ if it lands on heads but lose 100€ if it lands on tails. If we calculate the average (1/2<em>120+1/2</em>-100= 10), we see that the player would win money in the long run. That is the reason not playing games like this is often considered “irrational.”</p>
+<p>To the thoughtful reader, the problem with this argumentation should be obvious. The person playing does not have an infinite amount of money, which means there is a chance of going bankrupt. It is, of course, unlikely to go bankrupt when we consider playing this game in isolation, but if we take the real world into account, it is not so unlikely. What I mean is that the person playing this game could lose 500€ playing the game—this does probably not mean bankruptcy—but what if his car also brakes down and now he does not have enough money to fix it (because he lost 500$ playing some stupid game). The point is that in the real world, we do not have one game in isolation, but many “games” going on at the same time. Under these conditions, being loss-averse seems like the “rational” thing to do if you want to minimize your chances of going bankrupt. The decision is different for different people—a billionaire’s chance of going bankrupt does not really increase by playing this game.</p>
+<p>There are many such examples where an “irrational” behavior is rational when analyzed carefully. Most heuristics people use seem to be sophisticated tools for turning non-ergodic games into more ergodic ones—i.e. for minimizing the risk of going bust.</p>
+<p>I want to end with a practical heuristic (ala Nassim Taleb), on how to avoid all of the pitfalls I have outlined in this essay: Do not listen to economists, listen to your grandma. She probably understands ergodicity better, since she survived 85 years without going bust.</p>
+
+</content>
+<p>
+  <hr>
+  <i>For more, follow me on Twitter <a href="https://twitter.com/SvenSchnieders">@SvenSchnieders</a>.</i>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>

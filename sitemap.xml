@@ -3,33 +3,114 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://svenschnieders.github.io/website/</loc>
+    <lastmod>2021-03-18T14:58:23+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/books/</loc>
+    <lastmod>2021-03-18T14:58:23+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://svenschnieders.github.io/website/blog/</loc>
-    <lastmod>2021-03-18T14:25:40+01:00</lastmod>
+    <lastmod>2020-12-31T14:59:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/dressed/</loc>
+    <lastmod>2020-12-31T14:59:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/canceled/</loc>
+    <lastmod>2020-11-26T14:58:43+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/writing/</loc>
+    <lastmod>2020-11-22T14:24:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/happy/</loc>
+    <lastmod>2020-11-13T14:56:25+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/humans/</loc>
+    <lastmod>2020-10-28T14:22:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/heaven/</loc>
+    <lastmod>2020-10-10T14:54:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/courage/</loc>
+    <lastmod>2020-09-24T14:42:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/bitcoin/</loc>
+    <lastmod>2020-09-01T14:20:02+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/modesty/</loc>
+    <lastmod>2020-07-08T14:18:02+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/wise/</loc>
+    <lastmod>2020-06-06T14:40:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/school/</loc>
+    <lastmod>2020-05-17T14:15:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/ergodicity/</loc>
+    <lastmod>2020-04-20T14:13:59+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/quantum/</loc>
+    <lastmod>2020-04-10T14:11:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/money/</loc>
+    <lastmod>2020-03-29T14:10:06+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/news/</loc>
+    <lastmod>2020-03-22T14:07:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/antifragility/</loc>
+    <lastmod>2020-03-01T14:03:08+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/vlaues/</loc>
+    <lastmod>2020-02-20T14:00:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://svenschnieders.github.io/website/climate/</loc>
+    <lastmod>2020-01-26T13:56:55+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://svenschnieders.github.io/website/rules/</loc>
-    <lastmod>2021-03-18T14:25:40+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://svenschnieders.github.io/website/</loc>
-    <lastmod>2021-03-18T14:25:40+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://svenschnieders.github.io/website/test-post/</loc>
-    <lastmod>2021-03-17T16:46:46+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://svenschnieders.github.io/website/posts/</loc>
-    <lastmod>2021-03-17T14:54:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://svenschnieders.github.io/website/posts/test/</loc>
-    <lastmod>2021-03-17T14:54:01+01:00</lastmod>
+    <lastmod>2020-01-16T14:25:40+01:00</lastmod>
   </url>
   
   <url>

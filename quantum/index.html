@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Weirdness of Quantum Random Walks | Sven Schnieders</title>
+
+  
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #222426;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 2px solid rgb(54, 54, 54);
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #282c35;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/website/" class="title">
+  <h2>Sven Schnieders</h2>
+</a>
+<nav><a href="/website/">Home</a>
+
+
+<a href="/website/blog">Blog</a>
+
+
+<a href="/website/books">Books</a>
+</nav>
+</header>
+  <main>
+
+<h1>The Weirdness of Quantum Random Walks</h1>
+<p>
+  <i>
+    <time datetime='2020-04-10' pubdate>
+      10 Apr, 2020
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum mechanics</a> is probably the most unintuitive scientific theory in the history of humankind—nothing behaves like we are used to. In this essay, we will try to get back some intuition of how to think about quantum mechanics, more specifically the quantum random walk. No worries, there are going to be <em>no equations</em>—this is not a scientific paper. The main purpose of this essay is to make the reader curious by showing how weird our reality is and how this knowledge might help us in the future.</p>
+<p>Most people are familiar with the classical random walk which is a mathematical framework used to describe a lot of phenomena—e.g. Stock-prices and Brownian motion. The quantum random walk is less known and not as useful for explanations, but there are some interesting fields it might get more important in. The most notable cases are quantum computing—specifically Grover’s Algorithm—and quantum biology. The later field is the study of how and why quantum mechanics is important for explaining biology and it is still a pretty new and often controversial field.</p>
+<h3 id="classical">Classical</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Random_walk">classical random walk</a> in one dimension can be thought of as flipping a coin and going one step forward (+1) if it shows heads and one step backward (-1) if it shows tails. This is the simplest version of the random walk but it is sufficient to illustrate some important concepts.</p>
+<p>The first thing to note is that probabilities approach a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> (Gaussian). After one coin flip—T=1 steps—we find ourselves with the probability of 1/2 at 1 and with the probability of 1/2 at -1. After T=2 steps we find ourselves with a probability of 1/4 at 2, with the probability of 1/4 at -2, and with the probability of 1/2 at 0 (Figure 3). By continuing this sequence, we can see the normal distribution emerging.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586508603527-Q4JJL2080G6VZWKF1M1Q/ke17ZwdGBToddI8pDm48kIjS6q4cv5cYFkTz_escvjFZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVHk1kd5ZhDKaoPBq5dMMgNiLIFqjsmkQkqMmAV2uYMQkty480UlKOY0DP3Mqxn-Omk/image-asset.jpeg?format=500w" alt="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586508603527-Q4JJL2080G6VZWKF1M1Q/ke17ZwdGBToddI8pDm48kIjS6q4cv5cYFkTz_escvjFZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVHk1kd5ZhDKaoPBq5dMMgNiLIFqjsmkQkqMmAV2uYMQkty480UlKOY0DP3Mqxn-Omk/image-asset.jpeg?format=500w"></p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586509218902-IQ5G4Z3K1RGD1VFKIV0J/ke17ZwdGBToddI8pDm48kC4WqmtwEkHAKs-GAMAt7IJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIMY-uRSxFfrlmpPcZO_V5RxeWyHosL0CxVv30qiNAUhM/Screen+Shot+2020-04-10+at+11.00.08.png?format=500w" alt="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586509218902-IQ5G4Z3K1RGD1VFKIV0J/ke17ZwdGBToddI8pDm48kC4WqmtwEkHAKs-GAMAt7IJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIMY-uRSxFfrlmpPcZO_V5RxeWyHosL0CxVv30qiNAUhM/Screen+Shot+2020-04-10+at+11.00.08.png?format=500w"></p>
+<p>One important but counter-intuitive fact is that after T steps the average distance from our starting point (0) is not 0. You might expect that if we always move +1 or -1, we would on average not move way from the start (0), but that is not the case. The average distance from our start after T steps is roughly √(T). We will not prove this fact since I promised not to use equations but we will at least see why 0 is the wrong answer.</p>
+<p>The distance from our starting point can never be negative—a distance is only ever be positive. Even if we find ourselves after T=2 at the point -2, the distance to our starting point (0) is not -2 but 2. Put differently, it does not matter in which direction you go, you cannot be -5 meters away from your home (try it at home). Starting from this point, the interested reader can figure out (<a href="https://en.wikipedia.org/wiki/Random_walk#One-dimensional_random_walk">or lookup</a>) why the average distance is of the order of √(T).</p>
+<h3 id="quantum">Quantum</h3>
+<p>For a <a href="https://en.wikipedia.org/wiki/Quantum_walk">quantum random walk</a>, we need what I will call a “quantum coin”; it is a fair coin that just like the classical one has the probability of 1/2 for heads and 1/2 for tails. Note that this quantum coin does not exist and in reality and the “coin flip” is a mathematically defined <a href="https://en.wikipedia.org/wiki/Unitary_transformation_(quantum_mechanics)">unitary operation</a> manipulating the state of a system—spin—in <a href="https://en.wikipedia.org/wiki/Hilbert_space">Hilbert space</a>. We will use the balanced—fair—quantum coin named <a href="https://en.wikipedia.org/wiki/Quantum_walk#Discrete_time">Hadamard coin</a> for our example. The most important thing to understand here is that we have defined this coin to be fair. When we flip it, we get heads half of the time and tails the other half of the time. As with our classical coin, we will move one step forward (+1) if it lands on heads and one step backward (-1) if it lands on tails. After T=1 flips (or steps) we will be at 1 with the probability of 1/2 and at -1 with the probability of 1/2. So far, so good—everything is behaving “classically.”</p>
+<p>Now comes the weird part, instead of measuring after each step, we will measure only at the end—let us say, after T=5 flips. This represents, in a way, the quantum version of <a href="https://en.wikipedia.org/wiki/Bean_machine">Galton’s Board</a>. If everything behaved classically, it would not make a difference if we looked—i.e. measured—after every step or just at the end, but since we are dealing with weird quantum mechanics it makes a huge difference. The probability distribution looks like this:</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586509307347-UCS5QF91ZOP00Q86H56T/ke17ZwdGBToddI8pDm48kJOa5YPqCmGvzx7mCN2r0EdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIsiIvZpik36d-7psP9EKVUlUUi2YiCCZOvvpVrdTT-CE/Screen+Shot+2020-04-10+at+11.01.06.png?format=500w" alt="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586509307347-UCS5QF91ZOP00Q86H56T/ke17ZwdGBToddI8pDm48kJOa5YPqCmGvzx7mCN2r0EdZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIsiIvZpik36d-7psP9EKVUlUUi2YiCCZOvvpVrdTT-CE/Screen+Shot+2020-04-10+at+11.01.06.png?format=500w"></p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586526747838-SHOBBHF1UHDH1H2UI1LD/ke17ZwdGBToddI8pDm48kOLb81ARpkFxFMv5Mbr56oVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEEkvzdRL4CfH2OmtAD12M-DuTV5gn_3pnKAHtbVSWOI91lH3P2bFZvTItROhWrBJ0/image-asset.png?format=500w" alt="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586526747838-SHOBBHF1UHDH1H2UI1LD/ke17ZwdGBToddI8pDm48kOLb81ARpkFxFMv5Mbr56oVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEEkvzdRL4CfH2OmtAD12M-DuTV5gn_3pnKAHtbVSWOI91lH3P2bFZvTItROhWrBJ0/image-asset.png?format=500w"></p>
+<p>Keep in mind that to measure the probabilities for T=5, we are only allowed to measure after those 5 flips—never in-between. To get the probabilities for the other steps we need to measure only after e.g. T=3 but we cannot continue the experiment afterward and measure T=5.</p>
+<p>Looking at the table (Figure 4), we can see a couple of interesting things. First, the distribution starts to differ from the classical one after T=3. Second, the distribution is not symmetric; in this case, it is skewed to the left (negative) side. This is the case because we started with the initial state “spin down”. In our coin analogy, this corresponds to which side is facing upwards <em>before</em> you flip the coin. Take a moment to appreciate how unbelievable this is.</p>
+<p>We defined the coin so it has exactly 1/2 chance of landing on heads and 1/2 of landing on tails; and if we look after one flip, it works perfectly and it does not matter in which initial condition the coin was—i.e. which side was facing upward before the flip. But if we only look after T=5 flips, it matters a lot in which initial condition the coin was; it is suddenly important which side of the coin was facing upwards before we flipped it. This is because of a phenomenon at the heart of Quantum Mechanics called <a href="https://en.wikipedia.org/wiki/Wave_interference#Quantum_interference">interference</a>.</p>
+<p>If we do the experiment with our system having “spin up” we will get the same distribution skewed to the right. To get a symmetrical distribution, we have to put the system into a <a href="https://en.wikipedia.org/wiki/Quantum_superposition">superposition</a> of the two states “spin up” and “spin down.” Superposition means that the system is in both states at the same time and only when we “measure” it, the system decides the state. In our analogy, we have to prepare the coin so that it lies with heads up and tails up at the same time. This is, obviously, not possible with a real coin but doable with a quantum system.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586529134138-8UG2L02UHXH0YUZI861S/ke17ZwdGBToddI8pDm48kGsLnSpN9SmgRY0kKOgjdudZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFCeGs_oZuelCVw0HtcXhz3OCHUHA_lcJEJorkwU3xVcmbSd6kfRtgWHgNMDgGnmDY/image-asset.png?format=500w" alt="https://images.squarespace-cdn.com/content/v1/5dd3db4b74619b13c315e268/1586529134138-8UG2L02UHXH0YUZI861S/ke17ZwdGBToddI8pDm48kGsLnSpN9SmgRY0kKOgjdudZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFCeGs_oZuelCVw0HtcXhz3OCHUHA_lcJEJorkwU3xVcmbSd6kfRtgWHgNMDgGnmDY/image-asset.png?format=500w"></p>
+<p>The most interesting and useful feature of the quantum walk is that in contrast to the classical walk, the expected distance from the origin is not √(T) but T. This means that a quantum walk is quadratically faster than a classical random walk. In T flips—steps—we expect to find ourselves at the distance T from the start. This is incredible. One cannot understand this feature by thinking “classically.” We can only imagine that the quantum random walk is not going +1 <em>or</em> -1 at each step but rather <em>both</em> at the same time and the system only decides on one alternative when being measured (this mixture of superposition and interference makes everything extremely counter intuitive). Now, let us see why is it useful to know about this weird quantum random walk.</p>
+<p>(A note for the technical reader: another big difference to the classical random walk can be seen by adding an absorption barrier. While the classical walk has the probability of p=1 to be eventually absorbed, the quantum walk has, as described in <a href="https://arxiv.org/pdf/quant-ph/0303081.pdf">this paper</a>, a chance of escaping to infinity.)</p>
+<h3 id="grovers-algorithm">Grover’s Algorithm</h3>
+<p>Searching through lists and sorting them is one of the most popular tasks computers nowadays perform. Finding fast search and sorting algorithms is getting increasingly important because the amount of available data is skyrocketing and unsearchable or unsorted databases are mostly useless. This is where—in theory—<a href="https://en.wikipedia.org/wiki/Grover%27s_algorithm">Grover’s algorithm</a> comes in; it is a quantum algorithm for searching an item in an unsorted list. Only in theory because a good enough quantum computer has not been build yet and scaling up from the ones we have already build is not trivial.</p>
+<p>If you want to find a particular item in a list with N items classically, you need to check all N items—N evaluations—because the item you are searching for could be the last in the list. (If you are sure that the item is in the list, the correct number of evaluations is N-1, but this does not matter much here.) This means searching through an unsorted database with N entries takes—classically—N steps. However, with Grover’s quantum algorithm—which can be viewed as a quantum random walk—it takes √(N) steps. It allows for the same quadric speedup as the quantum random walk. For large databases—lists with big N— this can mean a lot fewer evaluations.</p>
+<p>(A note for the technical reader: it is sadly (or luckily?) not possible to solve NP-Complete problems in polynomial time with this algorithm.)</p>
+<h3 id="photosynthesis">Photosynthesis</h3>
+<p>In the book <a href="https://www.amazon.com/gp/product/0307986829/ref=as_li_tl?camp=1789&amp;creative=9325&amp;creativeASIN=0307986829&amp;ie=UTF8&amp;linkCode=as2&amp;linkId=e25ab2bb13badbe39bef972c3992240e&amp;tag=limitlesscuri-20">Life on the Edge</a>, Johnjoe McFadden and Jim Al-Khalili argue that quantum physics is needed to explain biological phenomena. One of the most important processes in biology is photosynthesis which, according to the authors, probably relies on the quantum random walk since such efficient transportation seems difficult to explain otherwise. However, quantum biology is a new and often controversial field and I am sadly not in the position to judge the credibility of this claim because my knowledge of biology is rudimentary at best.</p>
+<p>Some people believe that uncovering this mechanism of nature can help us build technologies that more efficiently convert the energy of sunlight into electric energy and I hope they are right. For those who are interested, I can highly recommend the already mentioned book <a href="https://www.amazon.com/gp/product/0307986829/ref=as_li_tl?camp=1789&amp;creative=9325&amp;creativeASIN=0307986829&amp;ie=UTF8&amp;linkCode=as2&amp;linkId=e25ab2bb13badbe39bef972c3992240e&amp;tag=limitlesscuri-20">Life on the Edge.</a></p>
+<h3 id="curious">Curious?</h3>
+<p>I hope this essay has shown the reader how weird our world at the smallest scale behaves without asking for many technical prerequisites. I have done my best to keep the explanations as intuitive as possible which is why I had to omit many details. For the interested reader, I would suggest “<a href="https://arxiv.org/pdf/quant-ph/0303081.pdf">Quantum random walks: An introductory overview</a>” by J. Kempe as a further reading—it is also the source for most of the figures. Keep in mind that you will need a decent amount of mathematical and physical background knowledge to understand it though. Having said this, I hope that my essay made some people curious about our world and that is all I can ask for.</p>
+
+</content>
+<p>
+  <hr>
+  <i>For more, follow me on Twitter <a href="https://twitter.com/SvenSchnieders">@SvenSchnieders</a>.</i>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>
