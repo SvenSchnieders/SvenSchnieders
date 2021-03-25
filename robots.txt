@@ -1,2 +1,2 @@
 User-Agent: *
-Sitemap: https://svenschnieders.github.io/website/sitemap.xml
+Sitemap: https://svenschnieders.github.io/sitemap.xml
